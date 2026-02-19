@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Pastel Palette */
+  --color-soft-blue: #A8DADC;
+  --color-mint: #B8E0D2;
+  --color-lavender: #EAD7FF;
+  --color-soft-yellow: #FFF3B0;
+  --color-text-dark: #2F3E46;
+  --color-text-light: #F1FAEE;
+
+  /* Theme Variables (defaults for Light) */
+  --bg-color: #F8F9FA;
+  --bg-secondary: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --text-primary: #2F3E46;
+  --text-secondary: #5A6B73;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --grid-bg: #F0F7F4;
+  --grid-line: #D4E8E0;
+  --cell-hover: rgba(168, 218, 220, 0.3);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --accent: #A8DADC;
+  --accent-secondary: #B8E0D2;
+  --overlay-bg: rgba(248, 249, 250, 0.95);
+
+  --border-radius-lg: 20px;
+  --border-radius-md: 12px;
+
+  --font-main: 'Poppins', sans-serif;
+  --base-font-size: 16px;
+}
+
+/* ===== GLOBAL RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--base-font-size);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+button,
+[role="button"] {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Clear cursor for interactive elements */
+button:not(:disabled),
+a[href],
+[role="gridcell"],
+[role="radio"],
+[role="menuitem"],
+input,
+select,
+textarea {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  cursor: text;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* ===== GLOBAL FOCUS INDICATOR ===== */
+/* Soft glowing pastel focus ring */
+*:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(168, 218, 220, 0.2);
+}
+
+/* Remove focus for mouse clicks (keyboard only) */
+*:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: rgba(168, 218, 220, 0.4);
+  color: var(--text-primary);
+}
+
+/* ===== LAYOUT ===== */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  outline: none;
+}
+
+/* ===== LOADING FALLBACK ===== */
+.loading-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.loading-fallback__spinner {
+  font-size: 3rem;
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+/* ===== SCREEN READER ONLY ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== GLOBAL ANIMATIONS ===== */
+@keyframes gentle-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes calm-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== REDUCE MOTION ===== */
+/* When enabled: disable ALL animations, replace with instant/color-only transitions */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Also respect OS-level prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grid-line);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

@@ -1,0 +1,56 @@
+.level-tracker {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 0.75rem 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.level-tracker__level {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.level-tracker__icon {
+    font-size: 1.2rem;
+}
+
+.level-tracker__text {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.level-tracker__stars {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 1rem;
+}
+
+.level-tracker__count {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.level-tracker__badges {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.level-tracker__badge {
+    font-size: 1.3rem;
+    cursor: default;
+    transition: transform 0.2s ease;
+}
+
+.level-tracker__badge:hover {
+    transform: scale(1.2);
+}
+
+.reduce-motion .level-tracker__badge:hover {
+    transform: none;
+}

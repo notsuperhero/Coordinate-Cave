@@ -1,0 +1,105 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border: none;
+    border-radius: 20px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    outline: none;
+    position: relative;
+}
+
+/* Focus ring for accessibility */
+.btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(168, 218, 220, 0.3);
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Sizes */
+.btn--large {
+    padding: 1rem 2rem;
+    font-size: 1.15rem;
+    min-width: 180px;
+}
+
+.btn--medium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    min-width: 120px;
+}
+
+.btn--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    min-width: 80px;
+}
+
+/* Variants */
+.btn--primary {
+    background: linear-gradient(135deg, #A8DADC, #88C8CB);
+    color: #2F3E46;
+    box-shadow: 0 4px 15px rgba(168, 218, 220, 0.4);
+}
+
+.btn--secondary {
+    background: linear-gradient(135deg, #EAD7FF, #D4C0F0);
+    color: #2F3E46;
+    box-shadow: 0 4px 15px rgba(234, 215, 255, 0.4);
+}
+
+.btn--mint {
+    background: linear-gradient(135deg, #B8E0D2, #98D0C0);
+    color: #2F3E46;
+    box-shadow: 0 4px 15px rgba(184, 224, 210, 0.4);
+}
+
+.btn--yellow {
+    background: linear-gradient(135deg, #FFF3B0, #F0E49E);
+    color: #2F3E46;
+    box-shadow: 0 4px 15px rgba(255, 243, 176, 0.4);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--text-primary);
+    box-shadow: none;
+    border: 2px solid var(--grid-line);
+}
+
+.btn--ghost:hover:not(:disabled) {
+    background: var(--cell-hover);
+    box-shadow: none;
+}
+
+.btn__icon {
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* Reduce motion */
+.reduce-motion .btn {
+    transition: none;
+}
+
+.reduce-motion .btn:hover:not(:disabled) {
+    transform: none;
+}

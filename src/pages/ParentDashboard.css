@@ -1,0 +1,205 @@
+.parent {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Auth Screen */
+.parent__auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.parent__auth-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 380px;
+    box-shadow: var(--shadow);
+}
+
+.parent__auth-card h2 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+}
+
+.parent__auth-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.parent__input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--grid-line);
+    border-radius: 14px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.parent__input:focus {
+    border-color: var(--accent);
+}
+
+.parent__error {
+    color: #E07A5F;
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem;
+}
+
+/* Dashboard */
+.parent__dashboard {
+    max-width: 700px;
+    width: 100%;
+}
+
+.parent__title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem;
+    text-align: center;
+}
+
+.parent__subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.parent__summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.parent__summary-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.parent__summary-icon {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.parent__summary-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+}
+
+.parent__summary-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.parent__chart-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.25rem;
+}
+
+.parent__chart-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin: 0 0 1rem;
+}
+
+/* Stat Bars */
+.parent__stat-bar {
+    margin-bottom: 0.75rem;
+}
+
+.parent__stat-bar-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.parent__stat-bar-value {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.parent__stat-bar-track {
+    width: 100%;
+    height: 12px;
+    background: var(--grid-bg);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.parent__stat-bar-fill {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+/* Badges */
+.parent__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.parent__badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--grid-bg);
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+}
+
+.parent__badge-icon {
+    font-size: 1.3rem;
+}
+
+.parent__badge-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Difficulty */
+.parent__difficulty {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.parent__reset {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.reduce-motion .parent__stat-bar-fill {
+    transition: none;
+}
